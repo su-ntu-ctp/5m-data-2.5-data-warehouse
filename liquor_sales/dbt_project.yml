@@ -30,6 +30,3 @@ models:
     star:
       +materialized: table
       +schema: star
-    snowflake:
-      +materialized: table
-      +schema: snowflake
