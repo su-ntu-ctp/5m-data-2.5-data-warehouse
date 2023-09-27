@@ -30,8 +30,8 @@ Learners will understand:
 Learners will be able to:
 
 - Developing a Dwh on Google Cloud Platform (GCP) BigQuery.
-- Transform and load data into a dimensional model using dbt.
-- Test and deploy dbt models.
+- Transform and load data into a dimensional model using Dbt.
+- Test and deploy Dbt models.
 
 ## Lesson Plan
 
@@ -43,8 +43,8 @@ Learners will be able to:
 |          | **1 HR MARK**           |
 | 20 mins  | Concept                 | Part 1: Dimensional Modeling.                            |
 | 10 mins  | Break                   |                                                          |
-| 30 mins  | Code-along              | Part 2: Hands-on with dbt and BigQuery.                  |
+| 30 mins  | Code-along              | Part 2: Hands-on with Dbt and BigQuery.                  |
 |          | **2 HR MARK**           |
-| 50 mins  | Code-along              | Part 2: Hands-on with dbt and BigQuery.                  |
+| 50 mins  | Code-along              | Part 2: Hands-on with Dbt and BigQuery.                  |
 | 10 mins  | Briefing / Q&A          | Brief on references, assignment, quiz and Q&A.           |
 |          | **END CLASS 3 HR MARK** |
