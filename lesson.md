@@ -6,6 +6,14 @@
 
 Create the conda environment based on the `environment.yml` file. We will also be using google cloud (for which the account was created in the previous unit) in this lesson.
 
+Please do:
+
+```
+conda env update -f environment.yml
+conda activate dwh
+pip install -r requirements.txt
+```
+
 ### Lesson Overview
 
 This lesson introduces data warehouse, ingestion model and dimensional modeling. It also contains hands-on _Transform_ part of ELT (dimensional modeling) with `dbt` and `BigQuery`.
