@@ -8,7 +8,7 @@ To create DBT, you can do:
 dbt init
 ```
 
-However, this structure is already created. So you can skip it. However, for the sake of practicing, you can create this outside of this folder to understand and compare the difference between the initialized DBT structure vs current structure
+However, this structure is already created. So you can skip it. For the sake of practicing, you can create this outside of this folder to understand and compare the difference between the initialized DBT structure vs current structure
 
 ### Configs
 
