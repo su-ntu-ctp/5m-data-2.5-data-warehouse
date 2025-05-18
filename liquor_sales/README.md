@@ -1,5 +1,15 @@
 Welcome to your new dbt project!
 
+### Prerequisites 
+
+To run this DBT project successfully, you will need the following:
+1. Set up your Google Cloud Platform account and make sure you can access the [console](https://console.cloud.google.com/)
+2. Install gcloud CLI using instructions [here](https://cloud.google.com/sdk/docs/install)
+3. Authenticate GCP (The command is `glcoud auth application-default login`)
+4. Go to GCP-IAM and give yourself BigQuery Admin role
+5. Update profiles.yml (update '\<YOUR-PROJECT-NAME\>')
+
+
 ### Setting up the DBT structure
 
 To create DBT, you can do:
@@ -40,6 +50,13 @@ When you are ready to snapshot your data, do:
 ```
 dbt snapshot
 ```
+
+You may encounter an error if the 'snapshots' dataset is not created in your BigQuery. If the dataset doesn’t exist, create it manually in BigQuery:
+
+1. Click “+ Add” → "Create Dataset".
+2. Enter `snapshots` as the dataset name.
+3. Set location = US (to match your dbt_project.yml settings).
+4. Click Create.
 
 ### Models 
 
