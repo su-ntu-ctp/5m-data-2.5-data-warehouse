@@ -36,9 +36,18 @@ It is available at [BigQuery Public](https://console.cloud.google.com/bigquery?p
 
 We will create a dbt project from scratch and implement a star schema for the data warehouse.
 
-> 1. Run `dbt init london_bicycle` to create a new dbt project.
-> 2. Add a fact and dimension model.
-> 3. Add tests.
+1. Run `dbt init london_bicycle` to create a new dbt project.
+    * Choose `bigquery` as the desired database to use
+    * Choose `oauth` as the desired authentication method
+    * Enter your GCP project ID when asked
+    * Enter `london_bicycle` as the name of your dbt dataset
+    * For threads and job_execution_timeout_seconds, use the default
+    * For desired location, choose EU (because the public london_bicycles dataset resides in EU)
+
+For 2. and 3. below, the learner is advised to go through the liquor_sales DBT project first before returning to complete 2. and 3. below.
+
+2. Add a fact and dimension model.
+3. Add tests.
 
 ### Designing and Implementing Star Schema and Snowflake Schema for Liquor Sales Data
 
@@ -66,6 +75,13 @@ Build the models with the following command:
 
 ```bash
 dbt run
+```
+
+If you encounter issues with the above, the following commands may help. Run the below before running `dbt run`:
+
+```bash
+dbt clean
+dbt debug
 ```
 
 #### Tests
