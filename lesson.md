@@ -28,30 +28,10 @@ Conceptual knowledge, refer to slides.
 
 ## Part 2 - Hands-on with dbt and BigQuery
 
-### Designing and Implementing Star Schema for Bicycle Hires Data
-
-We will be using the `London Bicycle Hires` dataset. This data contains the number of hires of London's Santander Cycle Hire Scheme from 2011 to present. Data includes start and stop timestamps, station names and ride duration.
-
-It is available at [BigQuery Public](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=london_bicycles&page=dataset).
-
-We will create a dbt project from scratch and implement a star schema for the data warehouse.
-
-1. Run `dbt init london_bicycle` to create a new dbt project.
-    * Choose `bigquery` as the desired database to use
-    * Choose `oauth` as the desired authentication method
-    * Enter your GCP project ID when asked
-    * Enter `london_bicycle` as the name of your dbt dataset
-    * For threads and job_execution_timeout_seconds, use the default
-    * For desired location, choose EU (because the public london_bicycles dataset resides in EU)
-
-For 2. and 3. below, the learner is advised to go through the liquor_sales DBT project first before returning to complete 2. and 3. below.
-
-2. Add a fact and dimension model.
-3. Add tests.
 
 ### Designing and Implementing Star Schema and Snowflake Schema for Liquor Sales Data
 
-In this section, we will be using the `liquor_sales` dataset. This dataset contains liquor sales data from Iowa, and available at [BigQuery Public](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=iowa_liquor_sales&page=dataset). The dbt project is located at `liquor_sales` directory. Skim through the `.yml` and `.sql` files in the `snapshots` and `models` directory.
+In this section, we will be using the `liquor_sales` dataset. This dataset contains liquor sales data from Iowa, and available at [BigQuery Public](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=iowa_liquor_sales&page=dataset). The dbt project is located at `liquor_sales` directory. This is a **fully completed** dbt project that has been pre-populated for you. Skim through the `.yml` and `.sql` files in the `snapshots` and `models` directory.
 
 The source is defined and configured in `models/sources.yml`. It refers to the `bigquery-public-data.iowa_liquor_sales.sales` table.
 
@@ -102,7 +82,30 @@ Observe the test results. There should be 1 failing test for the `dim_item` tabl
 > 2. Add a test for the `item_number` foreign key in the `fact_sales` table. The test should check if the `item_number` exists in the `dim_item` table.
 > 3. Run the tests again and make sure they pass.
 
-#### Snowflake Schema
+
+### Designing and Implementing Star Schema for Bicycle Hires Data
+
+We will be using the `London Bicycle Hires` dataset. This data contains the number of hires of London's Santander Cycle Hire Scheme from 2011 to present. Data includes start and stop timestamps, station names and ride duration.
+
+It is available at [BigQuery Public](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=london_bicycles&page=dataset).
+
+We will create a dbt project from scratch and implement a star schema for the data warehouse.
+
+1. Run `dbt init london_bicycle` to create a new dbt project.
+    * Choose `bigquery` as the desired database to use
+    * Choose `oauth` as the desired authentication method
+    * Enter your GCP project ID when asked
+    * Enter `london_bicycle` as the name of your dbt dataset
+    * For threads and job_execution_timeout_seconds, use the default
+    * For desired location, choose EU (because the public london_bicycles dataset resides in EU)
+
+For 2. and 3. below, the learner is advised to go through the liquor_sales DBT project first before returning to complete 2. and 3. below.
+
+2. Add a fact and dimension model.
+3. Add tests.
+
+
+#### Snowflake Schema (Extra)
 
 In a snowflake schema, each dimension can have one or more dimensions. For example, the `item` dimension table can be further normalized into `item`, `category` and `vendor` dimension tables. The `item` dimension table will contain the `category` and `vendor_number` as foreign keys.
 
