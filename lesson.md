@@ -83,21 +83,21 @@ Observe the test results. There should be 1 failing test for the `dim_item` tabl
 > 3. Run the tests again and make sure they pass.
 
 
-### Designing and Implementing Star Schema for Bicycle Hires Data
+### Designing and Implementing Star Schema for Austin Bikeshare Data
 
-We will be using the `London Bicycle Hires` dataset. This data contains the number of hires of London's Santander Cycle Hire Scheme from 2011 to present. Data includes start and stop timestamps, station names and ride duration.
+We will be using the `austin_bikeshare` dataset. This data contains the number of hires of bicycles from Austin Bikes. Data includes start and stop timestamps, station names and ride duration.
 
-It is available at [BigQuery Public](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=london_bicycles&page=dataset).
+It is available at [BigQuery Public](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sbigquery-public-data!2saustin_bikeshare).
 
 We will create a dbt project from scratch and implement a star schema for the data warehouse.
 
-1. Run `dbt init london_bicycle` to create a new dbt project.
+1. Run `dbt init austin_bikeshare_demo` to create a new dbt project.
     * Choose `bigquery` as the desired database to use
     * Choose `oauth` as the desired authentication method
     * Enter your GCP project ID when asked
-    * Enter `london_bicycle` as the name of your dbt dataset
+    * Enter `austin_bikeshare_demo` as the name of your dbt dataset
     * For threads and job_execution_timeout_seconds, use the default
-    * For desired location, choose EU (because the public london_bicycles dataset resides in EU)
+    * For desired location, choose US (because the public austin_bikeshare dataset resides in US)
 
 For 2. and 3. below, the learner is advised to go through the liquor_sales DBT project first before returning to complete 2. and 3. below.
 
