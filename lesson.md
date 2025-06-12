@@ -4,15 +4,9 @@
 
 ### Preparation
 
-Create the conda environment based on the `environment.yml` file. We will also be using google cloud (for which the account was created in the previous unit) in this lesson.
+Create the conda environment based on the `elt_environment.yml` file. We will also be using google cloud (for which the account was created in the previous unit) in this lesson.
 
-Please do:
-
-```
-conda env update -f environment.yml
-conda activate dwh
-pip install -r requirements.txt
-```
+Please refer to [environment_folder] https://github.com/su-ntu-ctp/5m-data-2.1-intro-big-data-eng/tree/main/environments for the environment files.
 
 ### Lesson Overview
 
