@@ -9,16 +9,6 @@ To run this DBT project successfully, you will need the following:
 4. Go to GCP-IAM and give yourself BigQuery Admin role
 5. Update profiles.yml (update '\<YOUR-PROJECT-NAME\>')
 
-### To verify your DBT project setup
-
-Run:
-
-```
-dbt debug
-```
-
-This command checks that your DBT project is correctly configured and that the connection to your data warehouse works.
-
 ### Setting up the DBT structure
 
 To create DBT, you can do:
@@ -37,6 +27,15 @@ DBT's high learning curve is mostly due to setting up the config. There are some
 - profiles.yml: If dbt_project points to this profile, it tells dbt how to connect to your data warehouse. Since we are working specifically on bigquery, see https://docs.getdbt.com/docs/core/connect-data-platform/bigquery-setup
 - model config: See models section below
 
+### To verify your DBT project setup
+
+Run:
+
+```
+dbt debug
+```
+
+This command checks that your DBT project is correctly configured and that the connection to your data warehouse works.
 
 ### Seeds 
 
