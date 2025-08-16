@@ -45,6 +45,12 @@ The dimension models are nested in a `star` subdirectory. Refer to the `dbt_proj
 
 The `dim_store` model is defined in `dim_store.sql`. It selects from the `store_snapshot` table. The `dim_item` model is defined in `dim_item.sql`. Currently it selects from the source table directly.
 
+Since this dbt project have snapshots, we need to run the following command first:
+
+```bash
+dbt snapshot
+```
+
 Build the models with the following command:
 
 ```bash
