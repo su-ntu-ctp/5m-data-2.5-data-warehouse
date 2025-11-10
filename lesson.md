@@ -25,6 +25,8 @@ Conceptual knowledge, refer to slides.
 
 ### Designing and Implementing Star Schema and Snowflake Schema for Liquor Sales Data
 
+Please refer to [README.md](liquor_sales/README.md) in the `liquor_sales` folder to perform the necessary setup to run this liquor sales project.
+
 In this section, we will be using the `liquor_sales` dataset. This dataset contains liquor sales data from Iowa, and available at [BigQuery Public](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=iowa_liquor_sales&page=dataset). The dbt project is located at `liquor_sales` directory. This is a **fully completed** dbt project that has been pre-populated for you. Skim through the `.yml` and `.sql` files in the `snapshots` and `models` directory.
 
 The source is defined and configured in `models/sources.yml`. It refers to the `bigquery-public-data.iowa_liquor_sales.sales` table.
