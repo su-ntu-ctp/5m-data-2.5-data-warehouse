@@ -11,13 +11,7 @@ To run this DBT project successfully, you will need the following:
 
 ### Setting up the DBT structure
 
-To create DBT, you can do:
-
-```
-dbt init
-```
-
-However, this structure is already created. So you can skip it. For the sake of practicing, you can create this outside of this folder to understand and compare the difference between the initialized DBT structure vs current structure
+The DBT structure has already been created for you, so there is no need to create a new one. FYI, the command for initialising a new dbt structure is `dbt init`.
 
 ### Configs
 
