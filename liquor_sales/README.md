@@ -23,6 +23,10 @@ DBT's high learning curve is mostly due to setting up the config. There are some
 
 ### To verify your DBT project setup
 
+Before you run the following command:
+- Make sure that you are in the `liquor_sales` folder
+- Make sure you have activate the `elt` environment using `conda activate elt`
+
 Run:
 
 ```
