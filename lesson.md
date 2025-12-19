@@ -47,6 +47,12 @@ The dimension models are nested in a `star` subdirectory. Refer to the `dbt_proj
 
 The `dim_store` model is defined in `dim_store.sql`. It selects from the `store_snapshot` table. The `dim_item` model is defined in `dim_item.sql`. Currently it selects from the source table directly.
 
+Before we start running dbt command, make sure that:
+- You have open a terminal.
+- Navigate to the `liquor_sales` folder by running `cd liquor_sales`
+- Make you are in the `elt` environment by running `conda activate elt`
+- Make sure the Bigquery connection is successful by running `dbt debug`
+
 Since this dbt project have snapshots, we need to run the following command first:
 
 ```bash
@@ -119,3 +125,7 @@ For the practices below, create a subdirectory under `models` called `snowflake`
 > 3. Add `schema.yml` with tests for the primary and foreign keys.
 > 4. Add a new custom `snowflake` schema with materialized tables in `dbt_project.yml`.
 > 5. Run the dbt commands to build the models and run the tests.
+
+
+
+

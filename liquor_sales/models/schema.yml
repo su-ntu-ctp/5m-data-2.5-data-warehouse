@@ -13,5 +13,6 @@ models:
         description: "The foreign key to the store dimension table"
         tests:
           - relationships:
-              to: ref('dim_store')
-              field: store_number
+              arguments:
+                to: ref('dim_store')
+                field: store_number
