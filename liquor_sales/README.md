@@ -7,7 +7,7 @@ To run this DBT project successfully, you will need the following:
 2. Install gcloud CLI using instructions [here](https://cloud.google.com/sdk/docs/install)
 3. Authenticate GCP (The command is `gcloud auth application-default login`)
 4. Go to GCP-IAM and give yourself BigQuery Admin role
-5. Update profiles.yml (update '\<YOUR-PROJECT-NAME\>')
+5. Update profiles.yml (update '\<YOUR-GCP-PROJECT-ID\>')
 
 ### Setting up the DBT structure
 

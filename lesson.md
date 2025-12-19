@@ -6,9 +6,7 @@
 
 - Create the conda environment based on the `elt-environment.yml` file. We will also be using google cloud (for which the account was created in the previous unit) in this lesson.
 
-- Please refer to the [Environment Folder](https://github.com/su-ntu-ctp/5m-data-2.1-intro-big-data-eng/tree/main/environments) for the environment files.
-
-- Please refer to the [installation.md](https://github.com/su-ntu-ctp/5m-data-2.1-intro-big-data-eng/blob/main/installation.md) for setup details.
+- Please refer to the [Environment Folder](https://github.com/su-ntu-ctp/5m-data-2.1-intro-big-data-eng/tree/main/environments) for the environment files. Please refer to the [installation.md](https://github.com/su-ntu-ctp/5m-data-2.1-intro-big-data-eng/blob/main/installation.md) for setup details.
 
 ### Lesson Overview
 
@@ -95,6 +93,7 @@ It is available at [BigQuery Public](https://console.cloud.google.com/bigquery?w
 
 We will create a dbt project from scratch and implement a star schema for the data warehouse.
 
+0. Open the terminal and make we are under the folder `5m-data-2.5-data-warehouse`. Also run `conda activate elt` if you have not done so.
 1. Run `dbt init austin_bikeshare_demo` to create a new dbt project.
     * Choose `bigquery` as the desired database to use
     * Choose `oauth` as the desired authentication method
