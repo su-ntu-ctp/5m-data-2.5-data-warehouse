@@ -13,6 +13,10 @@ models:
         description: "The foreign key to the store dimension table"
         tests:
           - relationships:
-              arguments:
+              # Uncomment the line 'arguments:' to resolve
+              # MissingArgumentsPropertyInGenericTestDeprecation Warnings
+              # Warnings appear Python 3.11 environment
+              # 'arguments:' will not work in older versions of dbt (Python 3.10 and below)
+              #arguments:
                 to: ref('dim_store')
                 field: store_number
