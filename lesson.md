@@ -126,6 +126,16 @@ We will create a dbt project from scratch and implement a star schema for the da
     * For threads and job_execution_timeout_seconds, use the default
     * For desired location, choose US (because the public austin_bikeshare dataset resides in US)
 
+Once the initialization is completed, you should have see the following message:
+![alt text](assets/dbt_init_msg.PNG)
+
+Click on the `profiles.yml`, alternatively the `profiles.yml` can be located at home folder:
+- For `WSL` user, it is located at the WSL folder (`/home/<wsl_username>/.dbt/profiles.yml`)
+- For `Mac` user, it is located at the home folder (`~/.dbt/profiles.yml`)
+
+Copy the profiles under `austin_bikeshare_demo` if you have more than one profiles.
+Under `austin_bikeshare_demo` folder, create a new file called `profiles.yml` and paste the profile information and save the `profiles.yml`.
+
 For 2. and 3. below, the learner is advised to go through the liquor_sales DBT project first before returning to complete 2. and 3. below.
 
 2. Add a fact and dimension model.
