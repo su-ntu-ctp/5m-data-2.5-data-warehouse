@@ -72,6 +72,19 @@ dbt clean
 dbt debug
 ```
 
+> ⚠️ **Warning!**
+>
+> **You may encounter warning message as follows:**
+> ![alt text](assets/dbt_warning1.PNG)
+>
+> **or similar message as below:**
+> ![alt text](assets/dbt_warning2.PNG)
+>
+> **To resolve this warning you need to uncomment `arguments` at the `schema.yml` for `fact_sales.sql`. This is under the `models` folder.** 
+>
+> ![alt text](assets/dbt_solution_warning.PNG)
+
+
 #### Tests
 
 Tests are defined in `schema.yml` files. They are used to validate the data in the tables. For example, the `dim_store` table has a test that checks if the `store_number` is unique and not null.
@@ -99,7 +112,12 @@ It is available at [BigQuery Public](https://console.cloud.google.com/bigquery?w
 
 We will create a dbt project from scratch and implement a star schema for the data warehouse.
 
-0. Open the terminal and make we are under the folder `5m-data-2.5-data-warehouse`. Also run `conda activate elt` if you have not done so.
+
+>⚠️ Warning! Make sure that  we are under the folder `5m-data-2.5-data-warehouse`. Many learners make the mistake of running `dbt init austin_bikeshare_demo` inside the `liquor_sales` project folder. Please do not do this! Each dbt project should be within its own project folder. So please return to the root folder `5m-data-2.5-data-warehouse` before running `dbt init austin_bikeshare_demo`.
+
+> Make sure you have activate the `elt` environment using `conda activate elt`
+
+
 1. Run `dbt init austin_bikeshare_demo` to create a new dbt project.
     * Choose `bigquery` as the desired database to use
     * Choose `oauth` as the desired authentication method
@@ -128,7 +146,7 @@ For the practices below, create a subdirectory under `models` called `snowflake`
 
 
 
-## Additional dbt Command (Optional/Self Study)
+## Additional dbt Command (Self Study)
 
 - Use `dbt build` can perform dbt run and dbt test concurrently. [Reference](https://docs.getdbt.com/reference/commands/build)
 - Use `dbt docs generate` will build a set of documentation based on the description you put in in the schema. [Reference](https://docs.getdbt.com/reference/commands/cmd-docs#dbt-docs-generate)
