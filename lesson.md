@@ -104,7 +104,7 @@ Observe the test results. There should be 1 failing test for the `dim_item` tabl
 > 3. Run the tests again and make sure they pass.
 
 
-### Designing and Implementing Star Schema for Austin Bikeshare Data
+### Designing and Implementing Star Schema for Austin Bikeshare Data from Scratch
 
 We will be using the `austin_bikeshare` dataset. This data contains the number of hires of bicycles from Austin Bikes. Data includes start and stop timestamps, station names and ride duration.
 
@@ -117,7 +117,7 @@ We will create a dbt project from scratch and implement a star schema for the da
 
 > Make sure you have activate the `elt` environment using `conda activate elt`
 
-
+#### Setting up a dbt project from scratch
 1. Run `dbt init austin_bikeshare_demo` to create a new dbt project.
     * Choose `bigquery` as the desired database to use
     * Choose `oauth` as the desired authentication method
@@ -129,13 +129,15 @@ We will create a dbt project from scratch and implement a star schema for the da
 Once the initialization is completed, you should have see the following message:
 ![alt text](assets/dbt_init_msg.PNG)
 
-Click on the `profiles.yml`, alternatively the `profiles.yml` can be located at home folder:
+#### Setting up profiles.yml
+Click on the `profiles.yml`, alternatively the `profiles.yml` is located at home folder:
 - For `WSL` user, it is located at the WSL folder (`/home/<wsl_username>/.dbt/profiles.yml`)
-- For `Mac` user, it is located at the home folder (`~/.dbt/profiles.yml`)
+- For `Mac` user, it is located at the home folder (`~/.dbt/profiles.yml` or `Users/<mac_username>/.dbt/profiles.yml`)
 
 Copy the profiles under `austin_bikeshare_demo` if you have more than one profiles.
 Under `austin_bikeshare_demo` folder, create a new file called `profiles.yml` and paste the profile information and save the `profiles.yml`.
 
+#### Design dbt models
 For 2. and 3. below, the learner is advised to go through the liquor_sales DBT project first before returning to complete 2. and 3. below.
 
 2. Add a fact and dimension model.
