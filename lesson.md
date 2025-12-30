@@ -83,6 +83,8 @@ dbt debug
 > **To resolve this warning you need to uncomment `arguments` at the `schema.yml` for `fact_sales.sql`. This is under the `models` folder.** 
 >
 > ![alt text](assets/dbt_solution_warning.PNG)
+>
+> Reference: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation
 
 
 #### Tests
