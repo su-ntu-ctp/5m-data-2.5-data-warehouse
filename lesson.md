@@ -137,6 +137,8 @@ Click on the `profiles.yml`, alternatively the `profiles.yml` is located at home
 Copy the profiles under `austin_bikeshare_demo` if you have more than one profiles.
 Under `austin_bikeshare_demo` folder, create a new file called `profiles.yml` and paste the profile information and save the `profiles.yml`.
 
+Finally, do a `dbt debug` to confirm profiles is good.
+
 #### Design dbt models
 For 2. and 3. below, the learner is advised to go through the liquor_sales DBT project first before returning to complete 2. and 3. below.
 
