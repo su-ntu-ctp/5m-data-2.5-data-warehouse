@@ -72,20 +72,6 @@ dbt clean
 dbt debug
 ```
 
-> ⚠️ **Warning!**
->
-> **You may encounter warning message as follows:**
-> ![alt text](assets/dbt_warning1.PNG)
->
-> **or similar message as below:**
-> ![alt text](assets/dbt_warning2.PNG)
->
-> **To resolve this warning you need to uncomment `arguments` at the `schema.yml` for `fact_sales.sql`. This is under the `models` folder.** 
->
-> ![alt text](assets/dbt_solution_warning.PNG)
->
-> Reference: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation
-
 
 #### Tests
 
@@ -167,5 +153,23 @@ For the practices below, create a subdirectory under `models` called `snowflake`
 - Use `dbt build` can perform dbt run and dbt test concurrently. [Reference](https://docs.getdbt.com/reference/commands/build)
 - Use `dbt docs generate` will build a set of documentation based on the description you put in in the schema. [Reference](https://docs.getdbt.com/reference/commands/cmd-docs#dbt-docs-generate)
 - Use `dbt docs serve` to run an internal website that contains all your documents. [Reference](https://docs.getdbt.com/reference/commands/cmd-docs#dbt-docs-serve)
+- Use `severity:` argument to set if the test should be a failure or just a warning. [Reference](https://docs.getdbt.com/reference/resource-configs/severity)
 
 Please refer to [dbt command reference](https://docs.getdbt.com/reference/dbt-commands) for further information.
+
+
+### Possible Warning (Self Study)
+
+> ⚠️ **Warning!**
+>
+> **You may encounter warning message as follows:**
+> ![alt text](assets/dbt_warning1.PNG)
+>
+> **or similar message as below:**
+> ![alt text](assets/dbt_warning2.PNG)
+>
+> **To resolve this warning you need to uncomment `arguments` at the `schema.yml` for `fact_sales.sql`. This is under the `models` folder.** 
+>
+> ![alt text](assets/dbt_solution_warning.PNG)
+>
+> Reference: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation
