@@ -127,6 +127,12 @@ Under `austin_bikeshare_demo` folder, create a new file called `profiles.yml` an
 
 Finally, do a `dbt debug` to confirm profiles is good.
 
+> Remember the following :
+> - You have open a terminal.
+> - Navigate to the `austin_bikeshare_demo` folder by running `cd austin_bikeshare_demo`
+> - Make you are in the `elt` environment by running `conda activate elt`
+> - Make sure the Bigquery connection is successful by running `dbt debug`
+
 #### Design dbt models
 For 2. and 3. below, the learner is advised to go through the liquor_sales DBT project first before returning to complete 2. and 3. below.
 
