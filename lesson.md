@@ -154,7 +154,7 @@ For the practices below, create a subdirectory under `models` called `snowflake`
 
 
 
-## Additional dbt Command (Self Study)
+## Additional dbt Command (Optional)
 
 - Use `dbt build` can perform dbt run and dbt test concurrently. [Reference](https://docs.getdbt.com/reference/commands/build)
 - Use `dbt docs generate` will build a set of documentation based on the description you put in in the schema. [Reference](https://docs.getdbt.com/reference/commands/cmd-docs#dbt-docs-generate)
@@ -164,7 +164,7 @@ For the practices below, create a subdirectory under `models` called `snowflake`
 Please refer to [dbt command reference](https://docs.getdbt.com/reference/dbt-commands) for further information.
 
 
-### Possible Warning (Self Study)
+### Possible Warning (Optional)
 
 > ⚠️ **Warning!**
 >
