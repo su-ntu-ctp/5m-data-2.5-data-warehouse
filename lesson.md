@@ -4,9 +4,9 @@
 
 ### Preparation
 
-Create the conda environment based on the `elt-environment.yml` file. We will also be using google cloud (for which the account was created in the previous unit) in this lesson.
+- Create the conda environment based on the `elt-environment.yml` file. We will also be using google cloud (for which the account was created in the previous unit) in this lesson.
 
-Please refer to the [Environment Folder](https://github.com/su-ntu-ctp/5m-data-2.1-intro-big-data-eng/tree/main/environments) for the environment files.
+- Please refer to the [Environment Folder](https://github.com/su-ntu-ctp/5m-data-2.1-intro-big-data-eng/tree/main/environments) for the environment files. Please refer to the [installation.md](https://github.com/su-ntu-ctp/5m-data-2.1-intro-big-data-eng/blob/main/installation.md) for setup details.
 
 ### Lesson Overview
 
@@ -47,6 +47,12 @@ The dimension models are nested in a `star` subdirectory. Refer to the `dbt_proj
 
 The `dim_store` model is defined in `dim_store.sql`. It selects from the `store_snapshot` table. The `dim_item` model is defined in `dim_item.sql`. Currently it selects from the source table directly.
 
+Before we start running dbt command, make sure that:
+- You have open a terminal.
+- Navigate to the `liquor_sales` folder by running `cd liquor_sales`
+- Make you are in the `elt` environment by running `conda activate elt`
+- Make sure the Bigquery connection is successful by running `dbt debug`
+
 Since this dbt project have snapshots, we need to run the following command first:
 
 ```bash
@@ -65,6 +71,7 @@ If you encounter issues with the above, the following commands may help. Run the
 dbt clean
 dbt debug
 ```
+
 
 #### Tests
 
@@ -85,7 +92,7 @@ Observe the test results. There should be 1 failing test for the `dim_item` tabl
 > 3. Run the tests again and make sure they pass.
 
 
-### Designing and Implementing Star Schema for Austin Bikeshare Data
+### Designing and Implementing Star Schema for Austin Bikeshare Data from Scratch
 
 We will be using the `austin_bikeshare` dataset. This data contains the number of hires of bicycles from Austin Bikes. Data includes start and stop timestamps, station names and ride duration.
 
@@ -93,6 +100,12 @@ It is available at [BigQuery Public](https://console.cloud.google.com/bigquery?w
 
 We will create a dbt project from scratch and implement a star schema for the data warehouse.
 
+
+>⚠️ Warning! Make sure that  we are under the folder `5m-data-2.5-data-warehouse`. Many learners make the mistake of running `dbt init austin_bikeshare_demo` inside the `liquor_sales` project folder. Please do not do this! Each dbt project should be within its own project folder. So please return to the root folder `5m-data-2.5-data-warehouse` before running `dbt init austin_bikeshare_demo`.
+
+> Make sure you have activate the `elt` environment using `conda activate elt`
+
+#### Setting up a dbt project from scratch
 1. Run `dbt init austin_bikeshare_demo` to create a new dbt project.
     * Choose `bigquery` as the desired database to use
     * Choose `oauth` as the desired authentication method
@@ -101,6 +114,26 @@ We will create a dbt project from scratch and implement a star schema for the da
     * For threads and job_execution_timeout_seconds, use the default
     * For desired location, choose US (because the public austin_bikeshare dataset resides in US)
 
+Once the initialization is completed, you should have see the following message:
+![alt text](assets/dbt_init_msg.PNG)
+
+#### Setting up profiles.yml
+Click on the `profiles.yml`, alternatively the `profiles.yml` is located at home folder:
+- For `WSL` user, it is located at the WSL folder (`/home/<wsl_username>/.dbt/profiles.yml`)
+- For `Mac` user, it is located at the home folder (`~/.dbt/profiles.yml` or `Users/<mac_username>/.dbt/profiles.yml`)
+
+Copy the profiles under `austin_bikeshare_demo` if you have more than one profiles.
+Under `austin_bikeshare_demo` folder, create a new file called `profiles.yml` and paste the profile information and save the `profiles.yml`.
+
+Finally, do a `dbt debug` to confirm profiles is good.
+
+> Remember the following :
+> - You have open a terminal.
+> - Navigate to the `austin_bikeshare_demo` folder by running `cd austin_bikeshare_demo`
+> - Make you are in the `elt` environment by running `conda activate elt`
+> - Make sure the Bigquery connection is successful by running `dbt debug`
+
+#### Design dbt models
 For 2. and 3. below, the learner is advised to go through the liquor_sales DBT project first before returning to complete 2. and 3. below.
 
 2. Add a fact and dimension model.
@@ -118,3 +151,31 @@ For the practices below, create a subdirectory under `models` called `snowflake`
 > 3. Add `schema.yml` with tests for the primary and foreign keys.
 > 4. Add a new custom `snowflake` schema with materialized tables in `dbt_project.yml`.
 > 5. Run the dbt commands to build the models and run the tests.
+
+
+
+## Additional dbt Command (Optional)
+
+- Use `dbt build` can perform dbt run and dbt test concurrently. [Reference](https://docs.getdbt.com/reference/commands/build)
+- Use `dbt docs generate` will build a set of documentation based on the description you put in in the schema. [Reference](https://docs.getdbt.com/reference/commands/cmd-docs#dbt-docs-generate)
+- Use `dbt docs serve` to run an internal website that contains all your documents. [Reference](https://docs.getdbt.com/reference/commands/cmd-docs#dbt-docs-serve)
+- Use `severity:` argument to set if the test should be a failure or just a warning. [Reference](https://docs.getdbt.com/reference/resource-configs/severity)
+
+Please refer to [dbt command reference](https://docs.getdbt.com/reference/dbt-commands) for further information.
+
+
+### Possible Warning (Optional)
+
+> ⚠️ **Warning!**
+>
+> **You may encounter warning message as follows:**
+> ![alt text](assets/dbt_warning1.PNG)
+>
+> **or similar message as below:**
+> ![alt text](assets/dbt_warning2.PNG)
+>
+> **To resolve this warning you need to uncomment `arguments` at the `schema.yml` for `fact_sales.sql`. This is under the `models` folder.** 
+>
+> ![alt text](assets/dbt_solution_warning.PNG)
+>
+> Reference: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation

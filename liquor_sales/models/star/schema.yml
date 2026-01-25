@@ -15,5 +15,8 @@ models:
       - name: item_number
         description: "The primary key for this table"
         tests:
-          - unique
+          - unique:
+              # Comment the line 'arguments:' to work on older versions of dbt (dbt-core < 1.10 and below)
+              arguments:
+                severity: error # accepts only `error` and `warn` default is error
           - not_null

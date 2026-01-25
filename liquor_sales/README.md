@@ -3,11 +3,11 @@ Welcome to your new dbt project!
 ### Prerequisites 
 
 To run this DBT project successfully, you will need the following:
-1. Set up your Google Cloud Platform account and make sure you can access the [console](https://console.cloud.google.com/)
-2. Install gcloud CLI using instructions [here](https://cloud.google.com/sdk/docs/install)
+1. Set up your Google Cloud Platform account and make sure you can access the [console](https://console.cloud.google.com/) (You may have done so in Lesson 2.2 or during coaching). Copy your GCP project id.
+2. Install gcloud CLI using instructions [here](https://cloud.google.com/sdk/docs/install) (You may have done so in Lesson 2.2 or during coaching)
 3. Authenticate GCP (The command is `gcloud auth application-default login`)
-4. Go to GCP-IAM and give yourself BigQuery Admin role
-5. Update profiles.yml (update '\<YOUR-PROJECT-NAME\>')
+4. Go to GCP-IAM and give yourself BigQuery Admin role (You may have done so in Lesson 2.2 or during coaching)
+5. Update profiles.yml (update '\<YOUR-GCP-PROJECT-ID\>')
 
 ### Setting up the DBT structure
 
@@ -22,6 +22,10 @@ DBT's high learning curve is mostly due to setting up the config. There are some
 - model config: See models section below
 
 ### To verify your DBT project setup
+
+Before you run the following command:
+- Make sure that you are in the `liquor_sales` folder
+- Make sure you have activate the `elt` environment using `conda activate elt`
 
 Run:
 
