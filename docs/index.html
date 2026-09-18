@@ -4,31 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>From Raw Data to Business Insights — Austin Bikeshare with dbt</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Code+Pro:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a2e;
-    --paper: #fafaf7;
-    --cream: #f5f0e8;
-    --accent: #c84b31;
-    --accent2: #2e86ab;
-    --accent3: #4caf50;
-    --muted: #6b7280;
-    --border: #e0d8cc;
+    --ink: #1B2A4A;
+    --paper: #ffffff;
+    --cream: #F4F5F7;
+    --accent: #C8102E;
+    --accent-dark: #A50D26;
+    --accent2: #2C5697;
+    --accent3: #1A7A5C;
+    --muted: #5F6B7A;
+    --border: #DDE1E6;
     --code-bg: #1e1e2e;
     --code-text: #cdd6f4;
     --highlight: #fff3cd;
-    --step-active: #c84b31;
-    --step-done: #4caf50;
-    --step-idle: #d1cec8;
+    --step-active: #C8102E;
+    --step-done: #1A7A5C;
+    --step-idle: #DDE1E6;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background: var(--paper);
-    color: var(--ink);
+    color: #333D4D;
     line-height: 1.7;
     font-size: 16px;
   }
@@ -41,6 +43,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-bottom: 5px solid var(--accent);
   }
   .hero::before {
     content: '';
@@ -62,7 +65,7 @@
     margin-bottom: 20px;
   }
   .hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: clamp(2rem, 5vw, 3.4rem);
     font-weight: 900;
     line-height: 1.1;
@@ -161,7 +164,7 @@
     margin-top: 4px;
   }
   .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 700;
     line-height: 1.2;
@@ -290,7 +293,7 @@
   .badge-fact { background: #fde8e4; color: var(--accent); }
   .badge-dim  { background: #e0f0f8; color: var(--accent2); }
   .badge-snap { background: #e8f5e9; color: #2e7d32; }
-  .badge-raw  { background: #f3f4f6; color: #6b7280; }
+  .badge-raw  { background: #f3f4f6; color: var(--muted); }
 
   /* ── DIAGRAM ── */
   .diagram {
@@ -355,7 +358,7 @@
   .star-box.fact { border-color: var(--accent); background: #fdf0ed; }
   .star-box.dim  { border-color: var(--accent2); background: #f0f7fb; }
   .star-box-title { font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 4px; font-weight: 700; }
-  .star-box-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; }
+  .star-box-name { font-family: 'Open Sans', sans-serif; font-size: 1rem; font-weight: 700; }
   .star-line {
     font-size: .75rem;
     font-family: 'Source Code Pro', monospace;
@@ -397,7 +400,7 @@
     padding: 9px 18px;
     border-radius: 6px;
     cursor: pointer;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: .9rem;
     font-weight: 700;
     color: var(--muted);
@@ -428,7 +431,7 @@
     gap: 8px;
     padding: 11px 22px;
     border-radius: 6px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: .9rem;
     font-weight: 700;
     cursor: pointer;
@@ -444,7 +447,7 @@
     border-color: var(--accent);
     color: #fff;
   }
-  .nav-btn.primary:hover { background: #a83a24; border-color: #a83a24; }
+  .nav-btn.primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
   .nav-btn:disabled, .nav-btn[disabled] { opacity: .35; cursor: default; pointer-events: none; }
 
   /* ── QUIZ ── */
@@ -478,7 +481,7 @@
 
   /* ── MISC ── */
   p { margin-bottom: 16px; }
-  h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin: 28px 0 10px; }
+  h3 { font-family: 'Open Sans', sans-serif; font-size: 1.15rem; font-weight: 700; margin: 28px 0 10px; }
   h4 { font-weight: 700; margin: 20px 0 8px; font-size: 1rem; }
   ul, ol { padding-left: 24px; margin-bottom: 16px; }
   li { margin-bottom: 6px; }
@@ -516,7 +519,7 @@
   }
   .summary-card .sc-icon { font-size: 2rem; margin-bottom: 8px; }
   .summary-card .sc-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; margin-bottom: 4px; }
-  .summary-card .sc-val { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+  .summary-card .sc-val { font-family: 'Open Sans', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--accent); }
 
   @media (max-width: 600px) {
     .hero { padding: 40px 20px 36px; }
