@@ -25,3 +25,5 @@ Revisit and review the following materials:
 - Unit 1.2 - Introduction to Database
 - Unit 1.4 - SQL Basic - DML
 - Unit 1.5 - SQL Advanced
+
+📄 [View lesson 2.5 interactive page](https://su-ntu-ctp.github.io/5m-data-2.5-data-warehouse/)
